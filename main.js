@@ -1,5 +1,3 @@
-import "./style.css";
-
 const slider = new A11YSlider(document.querySelector(".slider"), {
   centerMode: true,
   slidesToShow: 1,
