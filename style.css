@@ -1,0 +1,526 @@
+:root {
+  --clr-primary-100: rgb(255, 247, 240);
+  --clr-primary-800: rgb(122, 116, 110);
+  --clr-primary-900: rgb(3, 3, 3);
+
+  --clr-galactic-blue: rgb(117, 92, 222);
+  --clr-summer-yellow: rgb(246, 165, 96);
+  --clr-light-pink: rgb(243, 158, 158);
+  --clr-light-red: rgb(235, 117, 101);
+  --clr-cyan: rgb(97, 196, 183);
+  --clr-dark-purple: rgb(85, 32, 73);
+
+  --ff-primary: "Plus Jakarta Sans", sans-serif;
+
+  --ff-body: var(--ff-primary);
+  --ff-heading: var(--ff-primary);
+
+  --fw-bold: 600;
+  --fw-regular: 400;
+
+  --fs-body: var(--fs-100);
+  --fs-button: var(--fs-100);
+  --fs-primary-heading: var(--fs-900);
+  --fs-secondary-heading: var(--fs-800);
+  --fs-section-heading: var(--fs-700);
+
+  --f-heading-height-100: 2.5rem;
+  --f-heading-height-400: 3.18rem;
+  --f-heading-height-900: 4.3rem;
+  --f-body-height-100: 1.75rem;
+
+  --size-200: 1.5rem;
+  --size-600: 4rem;
+
+  --width-xs: ;
+  --width-md: ;
+  --width-xl: 50em;
+
+  --fs-xl: clamp(2.25rem, 10vw + 1rem, 3.5rem);
+  --fs-100: 0.875rem;
+  --fs-200: 1rem;
+  --fs-300: 1.5rem;
+  --fs-400: 1.625rem;
+}
+
+/* Big screens */
+@media (min-width: 28em) {
+  :root {
+    --fs-100: 1rem;
+    --fs-200: 1.125rem;
+    --fs-300: 1.5rem;
+    --fs-400: 2rem;
+  }
+}
+
+@media (min-width: 48em) {
+  :root {
+    --fs-100: 1rem;
+    --fs-200: 1.125rem;
+    --fs-300: 1.5rem;
+    --fs-400: 2.5rem;
+  }
+}
+
+/* https://piccalil.li/blog/a-modern-css-reset */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  background-color: inherit;
+  border: none;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Helper classes */
+.text-primary-100 {
+  color: var(--clr-primary-100);
+}
+.text-primary-800 {
+  color: var(--clr-primary-800);
+}
+.text-primary-900 {
+  color: var(--clr-primary-900);
+}
+.bg-primary-100 {
+  background-color: var(--clr-primary-100);
+}
+.bg-primary-800 {
+  background-color: var(--clr-primary-800);
+}
+.bg-primary-900 {
+  background-color: var(--clr-primary-900);
+}
+.bg-galactic-blue {
+  background-color: var(--clr-galactic-blue);
+}
+.bg-summer-yellow {
+  background-color: var(--clr-summer-yellow);
+}
+.bg-light-pink {
+  background-color: var(--clr-light-pink);
+}
+.bg-light-red {
+  background-color: var(--clr-light-red);
+}
+.bg-cyan {
+  background-color: var(--clr-cyan);
+}
+.bg-dark-purple {
+  background-color: var(--clr-dark-purple);
+}
+
+.fw-bold {
+  font-weight: var(--fw-bold);
+}
+.fw-regular {
+  font-weight: var(--fw-regular);
+}
+
+.fs-primary-heading {
+  font-size: var(--fs-primary-heading);
+}
+.fs-secondary-heading {
+  font-size: var(--fs-secondary-heading);
+}
+.fs-section-heading {
+  font-size: var(--fs-section-heading);
+}
+
+.h-64 {
+  max-height: 4rem;
+}
+.w-160 {
+  width: 10rem;
+}
+
+.container {
+  --max-width: 70rem;
+  --padding: 1rem;
+
+  width: min(var(--max-width), 100% - (var(--padding) * 2));
+  margin-inline: auto;
+}
+
+.container-fluid {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.d-row {
+  flex-direction: row;
+}
+.d-column {
+  flex-direction: column;
+}
+
+.d-justify-center {
+  justify-content: center;
+}
+
+.d-between {
+  justify-content: space-between;
+}
+
+.d-center {
+  align-items: center;
+}
+
+.text-align {
+  text-align: center;
+}
+
+.even-columns {
+  display: grid;
+  gap: 2.5rem;
+}
+
+@media (min-width: 48rem) {
+  .even-columns {
+    display: grid;
+    gap: 4.3rem;
+  }
+}
+
+.grid-col-span-2 {
+  grid-column: span 2;
+}
+
+.grid-row-span-2 {
+  grid-row: span 2;
+}
+@media (min-width: 48em) {
+  .even-columns {
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+  }
+}
+
+/* Slide */
+.slider {
+  display: flex;
+  gap: 0.93rem;
+}
+
+.slider > * {
+  width: 100%;
+}
+
+.slider--image {
+  border-radius: 0.625rem;
+  width: 100%;
+}
+
+/* general styling */
+body {
+  font-size: var(--fs-body);
+  font-family: var(--ff-body);
+  color: var(--clr-primary-800);
+  background-color: var(--clr-primary-100);
+  padding-top: var(--size-200);
+  padding-bottom: var(--size-600);
+}
+
+.primary-header-cta:hover {
+  cursor: pointer;
+  background-color: var(--clr-galactic-blue);
+}
+
+.logo-image {
+  width: 3rem;
+}
+
+@media (min-width: 23.4rem) {
+  .logo-image {
+    width: 4rem;
+  }
+}
+
+.primary-hero {
+  margin-block: 2rem;
+  text-align: center;
+}
+
+.primary-hero--title {
+  font-size: var(--fs-xl);
+  line-height: 1.1;
+}
+
+.primary-hero--introduction {
+  font-size: var(--fs-200);
+  line-height: 1.6;
+  margin-top: 1rem;
+}
+
+@media (min-width: 28em) {
+  .primary-hero {
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+  }
+  .primary-hero--introduction {
+    margin-top: 1.68rem;
+    max-width: 43rem;
+  }
+}
+
+@media (min-width: 48em) {
+  .primary-hero--introduction {
+    margin-top: 1.68rem;
+    max-width: 45rem;
+  }
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.introduction {
+  margin-block: 6.25rem;
+  text-align: center;
+}
+
+@media (min-width: 48em) {
+  .introduction {
+    text-align: left;
+  }
+}
+
+.introduction-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cta:hover {
+  background-color: var(--clr-summer-yellow);
+  cursor: pointer;
+}
+
+.introduction--image {
+  min-width: 18.75rem;
+  justify-self: center;
+}
+
+@media (min-width: 28em) {
+  .introduction--image {
+    min-width: 18.75rem;
+    justify-self: center;
+  }
+}
+
+@media (min-width: 48em) {
+  .introduction--image {
+    min-width: 18.75rem;
+    justify-self: center;
+  }
+}
+
+.introduction--title {
+  font-size: var(--fs-400);
+  line-height: 1.2;
+}
+
+.introduction--description {
+  margin-block: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.a11y-slider-container {
+  margin-block: 2rem;
+}
+
+@media (min-width: 48em) {
+  .a11y-slider-container {
+    margin-block: 3.5rem;
+  }
+}
+
+.work-slide {
+  text-align: center;
+  justify-content: center;
+}
+
+.work-slide--title {
+  font-size: 1.5rem;
+}
+
+.work-slide-arrows {
+  display: flex;
+  gap: 1rem;
+}
+
+.slide-arrow {
+  background-color: var(--clr-primary-900);
+  width: 4rem;
+  height: 4rem;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.arrow-prev img {
+  width: 1rem;
+}
+
+@media (min-width: 28em) {
+  .work-slide--title {
+    font-size: 2rem;
+  }
+}
+
+.cta {
+  border-radius: 1.75rem;
+  background-color: var(--clr-light-red);
+  color: var(--clr-primary-100);
+  font-size: var(--fs-100);
+}
+
+.book-call {
+  margin-top: 6.25rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+@media (min-width: 48em) {
+  .book-call {
+    text-align: left;
+  }
+}
+
+.book-call--content {
+  padding-block: 2.87rem;
+  padding-inline: 1.56rem;
+  border-radius: 0.625rem;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.book-call-content--text {
+  grid-column: 1 / 3;
+}
+
+@media (min-width: 48em) {
+  .book-call--content {
+    grid-template-columns: 1fr 1fr 1.6fr;
+  }
+}
+
+.book-call--title {
+  font-size: 1.625rem;
+  margin-bottom: 1.5rem;
+}
+
+.book-call--description {
+  margin-bottom: 1.25rem;
+}
+
+@media (min-width: 28em) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 48em) {
+  .grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+.button {
+  border-radius: 100vmax;
+  padding-block: 0.87em;
+  padding-inline: 2.81em;
+}
+
+.box {
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+}
+
+.box-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.box-image {
+  align-self: flex-end;
+}
+
+.box-text {
+  font-size: var(--fs-300);
+}
