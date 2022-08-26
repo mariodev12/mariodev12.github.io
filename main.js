@@ -7,15 +7,15 @@ const slider = new A11YSlider(document.querySelector(".slider"), {
   prevArrow: document.querySelectorAll(".arrow-prev"),
   nextArrow: document.querySelectorAll(".arrow-next"),
   responsive: {
+    375: {
+      slidesToShow: 1,
+      arrows: true,
+    },
     768: {
       slidesToShow: 3,
       arrows: true,
     },
-    960: {
-      slidesToShow: 3,
-      arrows: true, // slider disabled 960px to 1279px
-    },
-    1280: {
+    1440: {
       arrows: true,
       slidesToShow: 4,
     },
