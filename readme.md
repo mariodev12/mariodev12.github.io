@@ -1,7 +1,5 @@
 # Frontendmentor challenge
 
-Foobar is a Python library for dealing with word pluralization.
-
 ## Description
 
 Your challenge is to build out this single-page design portfolio site and get it looking as close to the design as possible.
